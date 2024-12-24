@@ -5,11 +5,6 @@ This project demonstrates the use of multiple machine learning models to classif
 ## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Requirements](#requirements)
-3. [Data](#data)
-4. [Models](#models)
-5. [Results](#results)
-6. [Usage](#usage)
-7. [License](#license)
 
 ## Project Overview
 
@@ -27,7 +22,8 @@ The performance of each model is evaluated using confusion matrices, and the res
 ## Requirements
 
 To run this project, you will need the following Python packages:
-
+- `python==3.12`
+- `PyCharm Community Edition 2024.1`
 - `matplotlib`
 - `pandas`
 - `numpy`
