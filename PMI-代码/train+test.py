@@ -10,7 +10,7 @@ from sklearn.tree import DecisionTreeClassifier,export_graphviz
 from sklearn import svm
 from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import RandomForestClassifier
-data = pd.read_csv("C:/Users/86182/Desktop/380-1.csv.csv",encoding='utf-8',low_memory=False)
+data = pd.read_csv()
 x = data.iloc[:, 1:].values
 y = data.iloc[:, 0].values
 
