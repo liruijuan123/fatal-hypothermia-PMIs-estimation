@@ -13,33 +13,18 @@ from sklearn.ensemble import RandomForestClassifier
 data = pd.read_csv()
 x = data.iloc[:, 1:].values
 y = data.iloc[:, 0].values
-
-
-
 x_train, x_test,y_train, y_test=train_test_split(x,y,test_size=0.2,random_state=25,stratify=y)
-
 transfer_1=StandardScaler()
 x_train=transfer_1.fit_transform(x_train)
 x_test=transfer_1.fit_transform(x_test)
-
 KNN=KNeighborsClassifier(n_neighbors=1)
-
 KNN.fit(x_train,y_train)
-
-
 DT=DecisionTreeClassifier(max_depth=4, min_samples_leaf=2, min_samples_split=8)#
-
 DT.fit(x_train,y_train)
-
 GNB=GaussianNB(var_smoothing=0.027825594022071243)
-
 GNB.fit(x_train,y_train)
-
-
 RF= RandomForestClassifier(oob_score=True,max_depth=3, min_samples_split=6, n_estimators=200)
-
 RF.fit(x_train,y_train)
-
 LR=LogisticRegression()
 LR.fit(x_train ,y_train)
 SVM=svm.SVC(C=1, kernel="sigmoid")
@@ -50,10 +35,8 @@ for i in range(len(models)):
         y_pred = KNN.predict(x_test)
     elif models[i] == 'DT':
         y_pred = DT.predict(x_test)
-
     elif models[i] == 'GNB':
         y_pred = GNB.predict(x_test)
-
     elif models[i] == 'RF':
         y_pred = RF.predict(x_test)
     elif models[i] == 'LR':
@@ -81,5 +64,4 @@ for i in range(len(models)):
             ax.text(j, i, format(cm[i, j], 'd'),
                     ha="center", va="center",
                     color="white" if cm[i, j] > thresh else "black")
-
     plt.show()
